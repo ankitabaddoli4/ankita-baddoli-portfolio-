@@ -1,818 +1,313 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Ankita Baddoli - AI Engineer portfolio. Python, Machine Learning, Generative AI, FastAPI, Flask and REST APIs.">
-    <meta name="author" content="Ankita Baddoli">
-    <title>Ankita Baddoli | AI Engineer</title>
-    <link rel="stylesheet" href="style.css">
-
-    <!-- Profile photo styling -->
-    <style>
-        .hero-visual {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-width: 0;
-        }
-
-        .profile-wrap {
-            position: relative;
-            width: min(340px, 100%);
-            padding: 9px;
-            border: 1px solid rgba(139, 156, 255, 0.55);
-            border-radius: 30px;
-            background: linear-gradient(
-                135deg,
-                rgba(139, 156, 255, 0.22),
-                rgba(86, 224, 210, 0.12)
-            );
-            box-shadow: 0 20px 55px rgba(0, 0, 0, 0.28);
-            transition: transform 0.3s ease;
-        }
-
-        .profile-wrap:hover {
-            transform: translateY(-5px);
-        }
-
-        .profile-photo {
-            display: block;
-            width: 100%;
-            aspect-ratio: 4 / 5;
-            object-fit: cover;
-            object-position: center 25%;
-            border-radius: 23px;
-            background: #151d35;
-        }
-
-        .profile-badge {
-            position: absolute;
-            left: -18px;
-            bottom: 22px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            padding: 12px 15px;
-            color: #eef2ff;
-            background: rgba(17, 23, 42, 0.96);
-            border: 1px solid rgba(166, 180, 255, 0.25);
-            border-radius: 14px;
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.28);
-            backdrop-filter: blur(12px);
-        }
-
-        .profile-badge-icon {
-            display: grid;
-            place-items: center;
-            width: 36px;
-            height: 36px;
-            flex-shrink: 0;
-            color: #08101b;
-            background: linear-gradient(135deg, #8b9cff, #56e0d2);
-            border-radius: 10px;
-        }
-
-        .profile-badge strong,
-        .profile-badge small {
-            display: block;
-        }
-
-        .profile-badge strong {
-            font-size: 0.92rem;
-        }
-
-        .profile-badge small {
-            margin-top: 3px;
-            color: #aab4d0;
-            font-size: 0.72rem;
-        }
-
-        .profile-caption {
-            margin-top: 22px;
-            color: #aab4d0;
-            text-align: center;
-            font-size: 0.84rem;
-        }
-
-        @media (max-width: 768px) {
-            .hero-visual {
-                margin: 25px auto;
-                width: 100%;
-            }
-
-            .profile-wrap {
-                width: min(280px, 82%);
-            }
-
-            .profile-badge {
-                left: -10px;
-            }
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            .profile-wrap {
-                transition: none;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080b16">
+  <meta name="description" content="Ankita Baddoli — AI Engineer, Python Developer, Machine Learning and Generative AI portfolio.">
+  <title>Ankita Baddoli | AI Engineer Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
-
 <body>
+  <div class="background-grid" aria-hidden="true"></div>
+  <div class="background-glow glow-one" aria-hidden="true"></div>
+  <div class="background-glow glow-two" aria-hidden="true"></div>
 
-    <div class="bg-grid"></div>
-    <div class="glow glow-one"></div>
-    <div class="glow glow-two"></div>
+  <header class="header" id="top">
+    <nav class="nav container" aria-label="Main navigation">
+      <a class="brand" href="#home" aria-label="Ankita home">
+        <span class="brand-mark">AB</span>
+        <span>Ankita<span class="brand-dot">.</span></span>
+      </a>
 
-    <!-- HEADER -->
-    <header class="header">
-        <div class="container nav-wrap">
+      <button class="menu-toggle" id="menu-toggle"
+        aria-label="Open navigation menu" aria-expanded="false"
+        aria-controls="nav-links">
+        <span></span><span></span><span></span>
+      </button>
 
-            <a class="logo" href="#home" aria-label="Ankita Baddoli home">
-                <span class="logo-mark">AB</span>
-                <span>Ankita<span class="accent">.</span></span>
-            </a>
+      <div class="nav-links" id="nav-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+        <a class="nav-cta" href="#contact">Let's Talk <span>↗</span></a>
+      </div>
+    </nav>
+  </header>
 
-            <button
-                class="menu-btn"
-                id="menuBtn"
-                aria-label="Open navigation"
-                aria-expanded="false"
-                aria-controls="nav"
+  <main>
+    <section class="hero section container" id="home">
+      <div class="hero-content reveal">
+        <div class="availability"><span class="status-dot"></span> Open to Work</div>
+        <p class="eyebrow">AI ENGINEER · PYTHON · MACHINE LEARNING</p>
+        <h1>Building practical <span class="gradient-text">AI solutions</span> with Python.</h1>
+        <p class="hero-description">
+          Recent AI/ML graduate focused on Python, Machine Learning,
+          Generative AI, FastAPI, Flask and REST APIs. I enjoy turning
+          ideas into useful, working applications.
+        </p>
+
+        <div class="hero-actions">
+          <a class="button button-primary" href="#projects">View Projects <span>↗</span></a>
+          <a class="button button-secondary" href="Ankita_Baddoli_Resume.pdf" download>
+            Download Resume <span>↓</span>
+          </a>
+        </div>
+
+        <div class="social-links">
+          <a href="https://github.com/ankitabaddoli4" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+          <a href="https://linkedin.com/in/ankita-baddoli-62816027a" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+          <a href="mailto:ankita_baddoli4@gmail.com">Email ↗</a>
+        </div>
+      </div>
+
+      <div class="hero-visual reveal">
+        <div class="profile-card">
+          <div class="profile-topline"><span>PROFILE / 2026</span><span class="live-dot"></span></div>
+
+          <div class="profile-photo-wrap">
+            <!-- IMPORTANT: The image file must be images/profile.jpg -->
+            <img
+              src="images/profile.jpg"
+              alt="Ankita Baddoli profile photo"
+              class="profile-photo"
+              id="profile-photo"
             >
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+            <div class="photo-fallback" id="photo-fallback" hidden>
+              <span>AB</span>
+              <small>Add your photo at images/profile.jpg</small>
+            </div>
+          </div>
 
-            <nav class="nav" id="nav">
-                <a href="#home" class="nav-link active">Home</a>
-                <a href="#about" class="nav-link">About</a>
-                <a href="#skills" class="nav-link">Skills</a>
-                <a href="#projects" class="nav-link">Projects</a>
-                <a href="#experience" class="nav-link">Experience</a>
-                <a href="#contact" class="nav-link">Contact</a>
-            </nav>
-
-            <a class="nav-cta" href="mailto:ankitabaddoli4@gmail.com">
-                Let's Talk
-            </a>
-
+          <div class="profile-caption">
+            <span class="profile-icon">✦</span>
+            <div>
+              <h2>AI / ML</h2>
+              <p>Building practical AI solutions</p>
+            </div>
+          </div>
+          <div class="profile-summary">Python · Machine Learning · Generative AI</div>
+          <div class="profile-orbit orbit-one"></div>
+          <div class="profile-orbit orbit-two"></div>
         </div>
-    </header>
-
-    <main>
-
-        <!-- HERO SECTION -->
-        <section class="hero section" id="home">
-            <div class="container hero-grid">
-
-                <div class="hero-content reveal">
-
-                    <div class="status-pill">
-                        <span class="status-dot"></span>
-                        Open to Work
-                    </div>
-
-                    <p class="eyebrow">
-                        AI ENGINEER · PYTHON · MACHINE LEARNING
-                    </p>
-
-                    <h1>
-                        Building practical
-                        <span class="gradient-text">AI solutions</span>
-                        with Python.
-                    </h1>
-
-                    <p class="hero-text">
-                        Recent AI/ML graduate focused on Python, Machine Learning,
-                        Generative AI, FastAPI, Flask and REST APIs. I enjoy turning
-                        ideas into useful, working applications.
-                    </p>
-
-                    <div class="hero-actions">
-                        <a class="btn btn-primary" href="#projects">
-                            View Projects <span>↗</span>
-                        </a>
-
-                        <a
-                            class="btn btn-secondary"
-                            href="Ankita_Baddoli_Resume.pdf"
-                            download
-                        >
-                            Download Resume <span>↓</span>
-                        </a>
-                    </div>
-
-                    <div class="social-row">
-                        <a
-                            href="https://github.com/ankitabaddoli4"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            GitHub ↗
-                        </a>
-
-                        <a
-                            href="https://www.linkedin.com/in/ankita-baddoli-62816027a/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            LinkedIn ↗
-                        </a>
-
-                        <a href="mailto:ankitabaddoli4@gmail.com">
-                            Email ↗
-                        </a>
-                    </div>
-
-                </div>
-
-                <!-- YOUR PROFILE PHOTO -->
-                <div class="hero-visual reveal">
-
-                    <div class="profile-wrap">
-                        <img
-                            class="profile-photo"
-                            src="images/profile.jpg"
-                            alt="Ankita Baddoli - AI Engineer"
-                            fetchpriority="high"
-                        >
-
-                        <div class="profile-badge">
-                            <span class="profile-badge-icon">✦</span>
-
-                            <div>
-                                <strong>AI / ML</strong>
-                                <small>Building practical AI solutions</small>
-                            </div>
-                        </div>
-                    </div>
-
-                    <p class="profile-caption">
-                        Python · Machine Learning · Generative AI
-                    </p>
-
-                </div>
-
-            </div>
-        </section>
-
-        <!-- TECHNOLOGY STRIP -->
-        <section class="tech-strip">
-            <div class="container tech-strip-inner">
-                <span>PYTHON</span>
-                <span>FASTAPI</span>
-                <span>FLASK</span>
-                <span>MACHINE LEARNING</span>
-                <span>GENAI</span>
-                <span>SQL</span>
-                <span>GIT</span>
-            </div>
-        </section>
-
-        <!-- ABOUT SECTION -->
-        <section class="section" id="about">
-            <div class="container">
-
-                <div class="section-heading reveal">
-                    <p class="eyebrow">ABOUT ME</p>
-
-                    <h2>
-                        From learning to
-                        <span class="gradient-text">building.</span>
-                    </h2>
-
-                    <p>
-                        I am an AI/ML graduate who likes learning by creating practical
-                        projects, APIs and intelligent applications.
-                    </p>
-                </div>
-
-                <div class="about-grid">
-
-                    <div class="about-copy reveal">
-
-                        <p>
-                            My focus is on building useful software with Python and
-                            machine learning. I have worked with Flask, FastAPI, REST APIs,
-                            SQL, Git and ML tools while developing academic and personal projects.
-                        </p>
-
-                        <p>
-                            I am currently looking for entry-level AI Engineer, Python,
-                            software engineering and internship opportunities where I can
-                            contribute, learn quickly and grow with a team.
-                        </p>
-
-                        <div class="about-facts">
-
-                            <div>
-                                <span>01</span>
-                                <strong>AI/ML Graduate</strong>
-                                <small>2026</small>
-                            </div>
-
-                            <div>
-                                <span>02</span>
-                                <strong>Python Developer Intern</strong>
-                                <small>Feb – May 2026</small>
-                            </div>
-
-                            <div>
-                                <span>03</span>
-                                <strong>Open to Opportunities</strong>
-                                <small>Remote · Hybrid · On-site</small>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div class="about-panel reveal">
-                        <div class="panel-label">CURRENT FOCUS</div>
-
-                        <h3>AI Engineer</h3>
-
-                        <p>Python · ML · GenAI · APIs</p>
-
-                        <div class="focus-list">
-                            <span>Building APIs</span>
-                            <span>ML applications</span>
-                            <span>GenAI & LLMs</span>
-                            <span>Automation</span>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- SKILLS SECTION -->
-        <section class="section section-alt" id="skills">
-            <div class="container">
-
-                <div class="section-heading reveal">
-                    <p class="eyebrow">SKILLS</p>
-
-                    <h2>
-                        Tools I use to
-                        <span class="gradient-text">build.</span>
-                    </h2>
-
-                    <p>
-                        Focused on practical technologies for AI, backend development and APIs.
-                    </p>
-                </div>
-
-                <div class="skill-grid">
-
-                    <article class="skill-card reveal">
-                        <div class="skill-icon">⌘</div>
-                        <h3>Python</h3>
-                        <p>Core programming, scripting, backend development and automation.</p>
-                        <span class="skill-level">Strong</span>
-                    </article>
-
-                    <article class="skill-card reveal">
-                        <div class="skill-icon">AI</div>
-                        <h3>Machine Learning</h3>
-                        <p>Model development, data processing and practical ML applications.</p>
-                        <span class="skill-level">Strong</span>
-                    </article>
-
-                    <article class="skill-card reveal">
-                        <div class="skill-icon">✦</div>
-                        <h3>Generative AI</h3>
-                        <p>Exploring LLM-based applications, AI workflows and prompt-driven tools.</p>
-                        <span class="skill-level">Intermediate</span>
-                    </article>
-
-                    <article class="skill-card reveal">
-                        <div class="skill-icon">API</div>
-                        <h3>FastAPI / Flask</h3>
-                        <p>REST APIs, CRUD services, authentication and backend integration.</p>
-                        <span class="skill-level">Strong</span>
-                    </article>
-
-                    <article class="skill-card reveal">
-                        <div class="skill-icon">DB</div>
-                        <h3>SQL & Databases</h3>
-                        <p>MySQL, SQLite, SQL queries and database-backed applications.</p>
-                        <span class="skill-level">Intermediate</span>
-                    </article>
-
-                    <article class="skill-card reveal">
-                        <div class="skill-icon">GH</div>
-                        <h3>Git & GitHub</h3>
-                        <p>Version control, repositories, project collaboration and deployment workflows.</p>
-                        <span class="skill-level">Intermediate</span>
-                    </article>
-
-                </div>
-
-                <div class="tool-cloud reveal">
-                    <span>NumPy</span>
-                    <span>Pandas</span>
-                    <span>scikit-learn</span>
-                    <span>TensorFlow</span>
-                    <span>PyTorch</span>
-                    <span>Postman</span>
-                    <span>JWT</span>
-                    <span>SQLAlchemy</span>
-                    <span>React</span>
-                    <span>Docker Basics</span>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- PROJECTS SECTION -->
-        <section class="section" id="projects">
-            <div class="container">
-
-                <div class="section-heading projects-heading reveal">
-
-                    <div>
-                        <p class="eyebrow">SELECTED WORK</p>
-
-                        <h2>
-                            Projects that show what I
-                            <span class="gradient-text">build.</span>
-                        </h2>
-                    </div>
-
-                    <a
-                        class="text-link"
-                        href="https://github.com/ankitabaddoli4"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        View GitHub ↗
-                    </a>
-
-                </div>
-
-                <div class="projects-grid">
-
-                    <article class="project-card project-featured reveal">
-                        <div class="project-top">
-                            <span class="project-number">01</span>
-                            <span class="project-type">AI / EMBEDDED</span>
-                        </div>
-
-                        <h3>Accident Prediction & Portable Airbag</h3>
-
-                        <p>
-                            AI-enabled two-wheeler safety system designed to detect crash
-                            patterns and support portable airbag deployment using sensor data,
-                            TinyML/LSTM concepts and an ESP32-based setup.
-                        </p>
-
-                        <div class="project-tags">
-                            <span>Python</span>
-                            <span>ML / LSTM</span>
-                            <span>ESP32</span>
-                            <span>IoT</span>
-                        </div>
-
-                        <div class="project-footer">
-                            <span>KSCST Selected Project</span>
-                        </div>
-                    </article>
-
-                    <article class="project-card reveal">
-                        <div class="project-top">
-                            <span class="project-number">02</span>
-                            <span class="project-type">AI / WEB</span>
-                        </div>
-
-                        <h3>AI System Monitoring Dashboard</h3>
-
-                        <p>
-                            Flask-based monitoring dashboard that tracks system activity,
-                            applies ML-based CPU usage prediction and provides real-time
-                            monitoring and alerts.
-                        </p>
-
-                        <div class="project-tags">
-                            <span>Flask</span>
-                            <span>Python</span>
-                            <span>ML</span>
-                            <span>psutil</span>
-                        </div>
-
-                        <a
-                            class="project-link"
-                            href="https://github.com/ankitabaddoli4/-AI-System-Monitoring-Dashboard"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            View project ↗
-                        </a>
-                    </article>
-
-                    <article class="project-card reveal">
-                        <div class="project-top">
-                            <span class="project-number">03</span>
-                            <span class="project-type">BACKEND</span>
-                        </div>
-
-                        <h3>Task Management REST API</h3>
-
-                        <p>
-                            Backend API with CRUD operations, JWT authentication,
-                            database integration and API testing using Postman.
-                        </p>
-
-                        <div class="project-tags">
-                            <span>Flask</span>
-                            <span>REST API</span>
-                            <span>JWT</span>
-                            <span>SQL</span>
-                        </div>
-
-                        <a
-                            class="project-link"
-                            href="https://github.com/ankitabaddoli4/Week9-TASK-MANAGEMENT-REST-API"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            View project ↗
-                        </a>
-                    </article>
-
-                    <article class="project-card reveal">
-                        <div class="project-top">
-                            <span class="project-number">04</span>
-                            <span class="project-type">FULL STACK</span>
-                        </div>
-
-                        <h3>Full-Stack Task Management App</h3>
-
-                        <p>
-                            Task management application combining a FastAPI backend with
-                            a React frontend, JWT authentication and CRUD workflows.
-                        </p>
-
-                        <div class="project-tags">
-                            <span>FastAPI</span>
-                            <span>React</span>
-                            <span>JWT</span>
-                            <span>Axios</span>
-                        </div>
-
-                        <a
-                            class="project-link"
-                            href="https://github.com/ankitabaddoli4/Full-Stack-Task-Management-App-FastAPI-React-"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            View project ↗
-                        </a>
-                    </article>
-
-                    <article class="project-card reveal">
-                        <div class="project-top">
-                            <span class="project-number">05</span>
-                            <span class="project-type">GENERATIVE AI</span>
-                        </div>
-
-                        <h3>CareerNexus AI</h3>
-
-                        <p>
-                            Resume and job-description assistant that estimates recognized
-                            skill coverage and helps users review keyword alignment.
-                        </p>
-
-                        <div class="project-tags">
-                            <span>Python</span>
-                            <span>Streamlit</span>
-                            <span>RAG</span>
-                            <span>GenAI</span>
-                        </div>
-
-                        <a
-                            class="project-link"
-                            href="https://github.com/ankitabaddoli4/CareerNexus-AI"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            View project ↗
-                        </a>
-                    </article>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- EXPERIENCE SECTION -->
-        <section class="section section-alt" id="experience">
-            <div class="container">
-
-                <div class="section-heading reveal">
-                    <p class="eyebrow">EXPERIENCE</p>
-
-                    <h2>
-                        Where I have
-                        <span class="gradient-text">learned by doing.</span>
-                    </h2>
-                </div>
-
-                <div class="timeline reveal">
-
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-
-                        <div class="timeline-date">FEB 2026 — MAY 2026</div>
-
-                        <div class="timeline-content">
-                            <p class="role-label">PYTHON DEVELOPER INTERN</p>
-
-                            <h3>The Developers Arena</h3>
-
-                            <p>
-                                Remote internship focused on Python development and practical
-                                programming work. Built and worked with backend concepts,
-                                APIs, databases and debugging workflows while completing
-                                assigned development tasks.
-                            </p>
-
-                            <div class="timeline-tags">
-                                <span>Python</span>
-                                <span>Backend</span>
-                                <span>APIs</span>
-                                <span>Git</span>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- RESUME SECTION -->
-        <section class="resume-section">
-            <div class="container">
-
-                <div class="resume-card reveal">
-
-                    <div>
-                        <p class="eyebrow">RESUME</p>
-
-                        <h2>Let's build something useful with AI.</h2>
-
-                        <p>
-                            View my resume for my education, skills, internship and projects.
-                        </p>
-                    </div>
-
-                    <a
-                        class="btn btn-light"
-                        href="Ankita_Baddoli_Resume.pdf"
-                        download
-                    >
-                        Download Resume <span>↓</span>
-                    </a>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- CONTACT SECTION -->
-        <section class="section contact-section" id="contact">
-            <div class="container">
-
-                <div class="contact-grid">
-
-                    <div class="contact-copy reveal">
-                        <p class="eyebrow">GET IN TOUCH</p>
-
-                        <h2>
-                            Have an opportunity?<br>
-                            <span class="gradient-text">Let's connect.</span>
-                        </h2>
-
-                        <p>
-                            I am open to entry-level AI Engineer, Python, software engineering
-                            and internship opportunities.
-                        </p>
-                    </div>
-
-                    <div class="contact-links reveal">
-
-                        <a
-                            href="mailto:ankitabaddoli4@gmail.com"
-                            class="contact-card"
-                        >
-                            <span class="contact-icon">@</span>
-
-                            <div>
-                                <small>Email</small>
-                                <strong>ankitabaddoli4@gmail.com</strong>
-                            </div>
-
-                            <span>↗</span>
-                        </a>
-
-                        <a
-                            href="https://www.linkedin.com/in/ankita-baddoli-62816027a/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="contact-card"
-                        >
-                            <span class="contact-icon">in</span>
-
-                            <div>
-                                <small>LinkedIn</small>
-                                <strong>ankita-baddoli-62816027a</strong>
-                            </div>
-
-                            <span>↗</span>
-                        </a>
-
-                        <a
-                            href="https://github.com/ankitabaddoli4"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="contact-card"
-                        >
-                            <span class="contact-icon">GH</span>
-
-                            <div>
-                                <small>GitHub</small>
-                                <strong>github.com/ankitabaddoli4</strong>
-                            </div>
-
-                            <span>↗</span>
-                        </a>
-
-                    </div>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <!-- FOOTER -->
-    <footer class="footer">
-        <div class="container footer-inner">
-            <span>© <span id="year"></span> Ankita Baddoli</span>
-            <span>AI Engineer · Python · Machine Learning</span>
-            <a href="#home">Back to top ↑</a>
+      </div>
+
+      <div class="hero-tech" aria-label="Core technologies">
+        <span>PYTHON</span><span>FASTAPI</span><span>FLASK</span>
+        <span>MACHINE LEARNING</span><span>GENAI</span><span>SQL</span><span>GIT</span>
+      </div>
+    </section>
+
+    <section class="section container" id="about">
+      <div class="section-heading reveal">
+        <p class="eyebrow">ABOUT ME</p>
+        <h2>From learning to <span class="gradient-text">building.</span></h2>
+        <p>I am an AI/ML graduate who likes learning by creating practical projects, APIs and intelligent applications.</p>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-copy panel reveal">
+          <p>
+            My focus is on building useful software with Python and machine
+            learning. I have worked with Flask, FastAPI, REST APIs, SQL, Git
+            and ML tools while developing academic and personal projects.
+          </p>
+          <p>
+            I am currently looking for entry-level AI Engineer, Python,
+            software engineering and internship opportunities where I can
+            contribute, learn quickly and grow with a team.
+          </p>
         </div>
-    </footer>
 
-    <button class="scroll-top" id="scrollTop" aria-label="Back to top">
-        ↑
-    </button>
+        <div class="about-facts">
+          <article class="fact-card reveal">
+            <span class="fact-number">01</span>
+            <div><h3>AI/ML Graduate</h3><p>2026</p></div>
+          </article>
+          <article class="fact-card reveal">
+            <span class="fact-number">02</span>
+            <div><h3>Python Developer Intern</h3><p>Feb – May 2026</p></div>
+          </article>
+          <article class="fact-card reveal">
+            <span class="fact-number">03</span>
+            <div><h3>Open to Opportunities</h3><p>Remote · Hybrid · On-site</p></div>
+          </article>
+        </div>
+      </div>
 
-    <script src="script.js"></script>
+      <div class="focus-strip reveal">
+        <div>
+          <p class="eyebrow">CURRENT FOCUS</p>
+          <h3>AI Engineer</h3>
+          <p>Python · ML · GenAI · APIs</p>
+        </div>
+        <div class="focus-tags">
+          <span>Building APIs</span><span>ML applications</span>
+          <span>GenAI &amp; LLMs</span><span>Automation</span>
+        </div>
+      </div>
+    </section>
 
-    <!-- Fallback for the footer year and mobile navigation -->
-    <script>
-        const yearElement = document.getElementById("year");
+    <section class="section container" id="skills">
+      <div class="section-heading reveal">
+        <p class="eyebrow">SKILLS</p>
+        <h2>Tools I use to <span class="gradient-text">build.</span></h2>
+        <p>Focused on practical technologies for AI, backend development and APIs.</p>
+      </div>
 
-        if (yearElement) {
-            yearElement.textContent = new Date().getFullYear();
-        }
+      <div class="skills-grid">
+        <article class="skill-card panel reveal">
+          <span class="skill-icon">⌘</span><h3>Python</h3>
+          <p>Core programming, scripting, backend development and automation.</p>
+          <span class="skill-level">Strong</span>
+        </article>
+        <article class="skill-card panel reveal">
+          <span class="skill-icon">AI</span><h3>Machine Learning</h3>
+          <p>Model development, data processing and practical ML applications.</p>
+          <span class="skill-level">Strong</span>
+        </article>
+        <article class="skill-card panel reveal">
+          <span class="skill-icon">✦</span><h3>Generative AI</h3>
+          <p>LLM-based applications, AI workflows and prompt-driven tools.</p>
+          <span class="skill-level">Intermediate</span>
+        </article>
+        <article class="skill-card panel reveal">
+          <span class="skill-icon">API</span><h3>FastAPI / Flask</h3>
+          <p>REST APIs, CRUD services, authentication and backend integration.</p>
+          <span class="skill-level">Strong</span>
+        </article>
+        <article class="skill-card panel reveal">
+          <span class="skill-icon">DB</span><h3>SQL &amp; Databases</h3>
+          <p>MySQL, SQLite, SQL queries and database-backed applications.</p>
+          <span class="skill-level">Intermediate</span>
+        </article>
+        <article class="skill-card panel reveal">
+          <span class="skill-icon">GH</span><h3>Git &amp; GitHub</h3>
+          <p>Version control, repositories, project collaboration and deployment.</p>
+          <span class="skill-level">Intermediate</span>
+        </article>
+      </div>
 
-        const menuButton = document.getElementById("menuBtn");
-        const navigation = document.getElementById("nav");
+      <div class="tool-cloud reveal">
+        <span>NumPy</span><span>Pandas</span><span>scikit-learn</span>
+        <span>TensorFlow</span><span>PyTorch</span><span>Postman</span>
+        <span>JWT</span><span>SQLAlchemy</span><span>React</span><span>Docker Basics</span>
+      </div>
+    </section>
 
-        if (menuButton && navigation) {
-            menuButton.addEventListener("click", function () {
-                const isOpen = navigation.classList.toggle("open");
-                menuButton.setAttribute("aria-expanded", String(isOpen));
-            });
+    <section class="section container" id="projects">
+      <div class="section-heading section-heading-row reveal">
+        <div>
+          <p class="eyebrow">SELECTED WORK</p>
+          <h2>Projects that show <span class="gradient-text">what I build.</span></h2>
+        </div>
+        <a class="text-link" href="https://github.com/ankitabaddoli4" target="_blank" rel="noopener noreferrer">View GitHub ↗</a>
+      </div>
 
-            navigation.querySelectorAll("a").forEach(function (link) {
-                link.addEventListener("click", function () {
-                    navigation.classList.remove("open");
-                    menuButton.setAttribute("aria-expanded", "false");
-                });
-            });
-        }
+      <div class="projects-grid">
+        <article class="project-card project-featured reveal">
+          <div class="project-top"><span class="project-number">01</span><span class="project-type">AI / EMBEDDED</span></div>
+          <h3>Accident Prediction &amp; Portable Airbag</h3>
+          <p>AI-enabled two-wheeler safety system designed to detect crash patterns and support portable airbag deployment using sensor data, TinyML/LSTM concepts and an ESP32-based setup.</p>
+          <div class="tag-list"><span>Python</span><span>ML / LSTM</span><span>ESP32</span><span>IoT</span></div>
+          <div class="project-footer"><span class="project-note">KSCST Selected Project</span></div>
+        </article>
 
-        const scrollTopButton = document.getElementById("scrollTop");
+        <article class="project-card reveal">
+          <div class="project-top"><span class="project-number">02</span><span class="project-type">AI / WEB</span></div>
+          <h3>AI System Monitoring Dashboard</h3>
+          <p>Flask-based monitoring dashboard that tracks system activity, applies ML-based CPU usage prediction and provides monitoring and alerts.</p>
+          <div class="tag-list"><span>Flask</span><span>Python</span><span>ML</span><span>psutil</span></div>
+          <div class="project-footer"><a class="text-link" href="https://github.com/ankitabaddoli4/-AI-System-Monitoring-Dashboard" target="_blank" rel="noopener noreferrer">View project ↗</a></div>
+        </article>
 
-        if (scrollTopButton) {
-            scrollTopButton.addEventListener("click", function () {
-                window.scrollTo({
-                    top: 0,
-                    behavior: "smooth"
-                });
-            });
+        <article class="project-card reveal">
+          <div class="project-top"><span class="project-number">03</span><span class="project-type">BACKEND</span></div>
+          <h3>Task Management REST API</h3>
+          <p>Backend API with CRUD operations, JWT authentication, database integration and API testing using Postman.</p>
+          <div class="tag-list"><span>Flask</span><span>REST API</span><span>JWT</span><span>SQL</span></div>
+          <div class="project-footer"><a class="text-link" href="https://github.com/ankitabaddoli4" target="_blank" rel="noopener noreferrer">View project ↗</a></div>
+        </article>
 
-            window.addEventListener("scroll", function () {
-                scrollTopButton.classList.toggle(
-                    "visible",
-                    window.scrollY > 350
-                );
-            });
-        }
-    </script>
+        <article class="project-card reveal">
+          <div class="project-top"><span class="project-number">04</span><span class="project-type">FULL STACK</span></div>
+          <h3>Full-Stack Task Management App</h3>
+          <p>Task management application combining a FastAPI backend with a React frontend, JWT authentication and CRUD workflows.</p>
+          <div class="tag-list"><span>FastAPI</span><span>React</span><span>JWT</span><span>Axios</span></div>
+          <div class="project-footer"><a class="text-link" href="https://github.com/ankitabaddoli4" target="_blank" rel="noopener noreferrer">View project ↗</a></div>
+        </article>
 
+        <article class="project-card reveal">
+          <div class="project-top"><span class="project-number">05</span><span class="project-type">GENERATIVE AI</span></div>
+          <h3>CareerNexus AI</h3>
+          <p>Resume and job-description assistant that estimates recognized skill coverage and helps users review keyword alignment.</p>
+          <div class="tag-list"><span>Python</span><span>Streamlit</span><span>RAG</span><span>GenAI</span></div>
+          <div class="project-footer"><a class="text-link" href="https://github.com/ankitabaddoli4" target="_blank" rel="noopener noreferrer">View project ↗</a></div>
+        </article>
+      </div>
+      <p class="section-footnote">Project descriptions summarize the work. Please review each repository to see available code and implementation details.</p>
+    </section>
+
+    <section class="section container" id="experience">
+      <div class="section-heading reveal">
+        <p class="eyebrow">EXPERIENCE</p>
+        <h2>Where I have learned <span class="gradient-text">by doing.</span></h2>
+      </div>
+
+      <article class="experience-card panel reveal">
+        <div class="experience-date">FEB 2026 — MAY 2026</div>
+        <div class="experience-content">
+          <p class="eyebrow">PYTHON DEVELOPER INTERN</p>
+          <h3>The Developers Arena</h3>
+          <p>Remote internship focused on Python development and practical programming work. Built and worked with backend concepts, APIs, databases and debugging workflows while completing assigned development tasks.</p>
+          <div class="tag-list"><span>Python</span><span>Backend</span><span>APIs</span><span>Git</span></div>
+        </div>
+      </article>
+    </section>
+
+    <section class="resume-banner container reveal" id="resume">
+      <div>
+        <p class="eyebrow">RESUME</p>
+        <h2>Let's build something useful <span class="gradient-text">with AI.</span></h2>
+        <p>View my resume for my education, skills, internship and projects.</p>
+      </div>
+      <a class="button button-primary" href="Ankita_Baddoli_Resume.pdf" download>Download Resume <span>↓</span></a>
+    </section>
+
+    <section class="section container contact-section" id="contact">
+      <div class="section-heading reveal">
+        <p class="eyebrow">GET IN TOUCH</p>
+        <h2>Have an opportunity?<br><span class="gradient-text">Let's connect.</span></h2>
+        <p>I am open to entry-level AI Engineer, Python, software engineering and internship opportunities.</p>
+      </div>
+
+      <div class="contact-grid">
+        <a class="contact-card panel reveal" href="mailto:ankita_baddoli4@gmail.com">
+          <span class="contact-icon">@</span><span class="contact-label">Email</span>
+          <strong>ankita_baddoli4@gmail.com</strong><span class="contact-arrow">↗</span>
+        </a>
+        <a class="contact-card panel reveal" href="https://linkedin.com/in/ankita-baddoli-62816027a" target="_blank" rel="noopener noreferrer">
+          <span class="contact-icon">in</span><span class="contact-label">LinkedIn</span>
+          <strong>ankita-baddoli-62816027a</strong><span class="contact-arrow">↗</span>
+        </a>
+        <a class="contact-card panel reveal" href="https://github.com/ankitabaddoli4" target="_blank" rel="noopener noreferrer">
+          <span class="contact-icon">GH</span><span class="contact-label">GitHub</span>
+          <strong>github.com/ankitabaddoli4</strong><span class="contact-arrow">↗</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer container">
+    <a class="brand" href="#home"><span class="brand-mark">AB</span><span>Ankita<span class="brand-dot">.</span></span></a>
+    <p>© <span id="year">2026</span> Ankita Baddoli</p>
+    <p>AI Engineer · Python · Machine Learning</p>
+  </footer>
+
+  <button class="back-to-top" id="back-to-top" aria-label="Back to top">↑</button>
 </body>
 </html>
