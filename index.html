@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,22 +8,143 @@
     <meta name="author" content="Ankita Baddoli">
     <title>Ankita Baddoli | AI Engineer</title>
     <link rel="stylesheet" href="style.css">
+
+    <!-- Profile photo styling -->
+    <style>
+        .hero-visual {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-width: 0;
+        }
+
+        .profile-wrap {
+            position: relative;
+            width: min(340px, 100%);
+            padding: 9px;
+            border: 1px solid rgba(139, 156, 255, 0.55);
+            border-radius: 30px;
+            background: linear-gradient(
+                135deg,
+                rgba(139, 156, 255, 0.22),
+                rgba(86, 224, 210, 0.12)
+            );
+            box-shadow: 0 20px 55px rgba(0, 0, 0, 0.28);
+            transition: transform 0.3s ease;
+        }
+
+        .profile-wrap:hover {
+            transform: translateY(-5px);
+        }
+
+        .profile-photo {
+            display: block;
+            width: 100%;
+            aspect-ratio: 4 / 5;
+            object-fit: cover;
+            object-position: center 25%;
+            border-radius: 23px;
+            background: #151d35;
+        }
+
+        .profile-badge {
+            position: absolute;
+            left: -18px;
+            bottom: 22px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 15px;
+            color: #eef2ff;
+            background: rgba(17, 23, 42, 0.96);
+            border: 1px solid rgba(166, 180, 255, 0.25);
+            border-radius: 14px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.28);
+            backdrop-filter: blur(12px);
+        }
+
+        .profile-badge-icon {
+            display: grid;
+            place-items: center;
+            width: 36px;
+            height: 36px;
+            flex-shrink: 0;
+            color: #08101b;
+            background: linear-gradient(135deg, #8b9cff, #56e0d2);
+            border-radius: 10px;
+        }
+
+        .profile-badge strong,
+        .profile-badge small {
+            display: block;
+        }
+
+        .profile-badge strong {
+            font-size: 0.92rem;
+        }
+
+        .profile-badge small {
+            margin-top: 3px;
+            color: #aab4d0;
+            font-size: 0.72rem;
+        }
+
+        .profile-caption {
+            margin-top: 22px;
+            color: #aab4d0;
+            text-align: center;
+            font-size: 0.84rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero-visual {
+                margin: 25px auto;
+                width: 100%;
+            }
+
+            .profile-wrap {
+                width: min(280px, 82%);
+            }
+
+            .profile-badge {
+                left: -10px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .profile-wrap {
+                transition: none;
+            }
+        }
+    </style>
 </head>
+
 <body>
 
     <div class="bg-grid"></div>
     <div class="glow glow-one"></div>
     <div class="glow glow-two"></div>
 
+    <!-- HEADER -->
     <header class="header">
         <div class="container nav-wrap">
+
             <a class="logo" href="#home" aria-label="Ankita Baddoli home">
                 <span class="logo-mark">AB</span>
                 <span>Ankita<span class="accent">.</span></span>
             </a>
 
-            <button class="menu-btn" id="menuBtn" aria-label="Open navigation" aria-expanded="false">
-                <span></span><span></span><span></span>
+            <button
+                class="menu-btn"
+                id="menuBtn"
+                aria-label="Open navigation"
+                aria-expanded="false"
+                aria-controls="nav"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
             </button>
 
             <nav class="nav" id="nav">
@@ -34,22 +156,29 @@
                 <a href="#contact" class="nav-link">Contact</a>
             </nav>
 
-            <a class="nav-cta" href="mailto:ankitabaddoli4@gmail.com">Let's Talk</a>
+            <a class="nav-cta" href="mailto:ankitabaddoli4@gmail.com">
+                Let's Talk
+            </a>
+
         </div>
     </header>
 
     <main>
 
-        <!-- HERO -->
+        <!-- HERO SECTION -->
         <section class="hero section" id="home">
             <div class="container hero-grid">
+
                 <div class="hero-content reveal">
+
                     <div class="status-pill">
                         <span class="status-dot"></span>
                         Open to Work
                     </div>
 
-                    <p class="eyebrow">AI ENGINEER · PYTHON · MACHINE LEARNING</p>
+                    <p class="eyebrow">
+                        AI ENGINEER · PYTHON · MACHINE LEARNING
+                    </p>
 
                     <h1>
                         Building practical
@@ -67,62 +196,71 @@
                         <a class="btn btn-primary" href="#projects">
                             View Projects <span>↗</span>
                         </a>
-                        <a class="btn btn-secondary" href="Ankita_Baddoli_Resume.pdf" download>
+
+                        <a
+                            class="btn btn-secondary"
+                            href="Ankita_Baddoli_Resume.pdf"
+                            download
+                        >
                             Download Resume <span>↓</span>
                         </a>
                     </div>
 
                     <div class="social-row">
-                        <a href="https://github.com/ankitabaddoli4" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-                        <a href="https://www.linkedin.com/in/ankita-baddoli-62816027a/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
-                        <a href="mailto:ankitabaddoli4@gmail.com">Email ↗</a>
+                        <a
+                            href="https://github.com/ankitabaddoli4"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            GitHub ↗
+                        </a>
+
+                        <a
+                            href="https://www.linkedin.com/in/ankita-baddoli-62816027a/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            LinkedIn ↗
+                        </a>
+
+                        <a href="mailto:ankitabaddoli4@gmail.com">
+                            Email ↗
+                        </a>
                     </div>
+
                 </div>
 
+                <!-- YOUR PROFILE PHOTO -->
                 <div class="hero-visual reveal">
-                    <div class="code-window">
-                        <div class="window-bar">
-                            <div class="window-dots">
-                                <span></span><span></span><span></span>
+
+                    <div class="profile-wrap">
+                        <img
+                            class="profile-photo"
+                            src="images/profile.jpg"
+                            alt="Ankita Baddoli - AI Engineer"
+                            fetchpriority="high"
+                        >
+
+                        <div class="profile-badge">
+                            <span class="profile-badge-icon">✦</span>
+
+                            <div>
+                                <strong>AI / ML</strong>
+                                <small>Building practical AI solutions</small>
                             </div>
-                            <span class="window-title">ai_engineer.py</span>
-                            <span class="window-spacer"></span>
-                        </div>
-
-                        <div class="code-body">
-                            <div class="code-line"><span class="num">01</span><span class="keyword">class</span> <span class="class-name">AIEngineer</span>:</div>
-                            <div class="code-line"><span class="num">02</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">def</span> <span class="function">build</span>(self):</div>
-                            <div class="code-line"><span class="num">03</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span class="string">"AI-powered solutions"</span></div>
-                            <div class="code-line"><span class="num">04</span></div>
-                            <div class="code-line"><span class="num">05</span><span class="comment"># skills</span></div>
-                            <div class="code-line"><span class="num">06</span>python <span class="operator">+</span> ml <span class="operator">+</span> genai</div>
-                            <div class="code-line"><span class="num">07</span>fastapi <span class="operator">+</span> flask <span class="operator">+</span> sql</div>
-                            <div class="code-line"><span class="num">08</span>git <span class="operator">+</span> apis <span class="operator">+</span> projects</div>
-                            <div class="code-line"><span class="num">09</span></div>
-                            <div class="code-line"><span class="num">10</span><span class="comment"># ready to build</span> <span class="cursor">_</span></div>
                         </div>
                     </div>
 
-                    <div class="floating-card card-top">
-                        <span class="float-icon">✦</span>
-                        <div>
-                            <strong>AI / ML</strong>
-                            <small>Applied Projects</small>
-                        </div>
-                    </div>
+                    <p class="profile-caption">
+                        Python · Machine Learning · Generative AI
+                    </p>
 
-                    <div class="floating-card card-bottom">
-                        <span class="float-icon">⌘</span>
-                        <div>
-                            <strong>Python</strong>
-                            <small>Backend & APIs</small>
-                        </div>
-                    </div>
                 </div>
+
             </div>
         </section>
 
-        <!-- TRUST STRIP -->
+        <!-- TECHNOLOGY STRIP -->
         <section class="tech-strip">
             <div class="container tech-strip-inner">
                 <span>PYTHON</span>
@@ -135,12 +273,18 @@
             </div>
         </section>
 
-        <!-- ABOUT -->
+        <!-- ABOUT SECTION -->
         <section class="section" id="about">
             <div class="container">
+
                 <div class="section-heading reveal">
                     <p class="eyebrow">ABOUT ME</p>
-                    <h2>From learning to <span class="gradient-text">building.</span></h2>
+
+                    <h2>
+                        From learning to
+                        <span class="gradient-text">building.</span>
+                    </h2>
+
                     <p>
                         I am an AI/ML graduate who likes learning by creating practical
                         projects, APIs and intelligent applications.
@@ -148,12 +292,15 @@
                 </div>
 
                 <div class="about-grid">
+
                     <div class="about-copy reveal">
+
                         <p>
                             My focus is on building useful software with Python and
                             machine learning. I have worked with Flask, FastAPI, REST APIs,
                             SQL, Git and ML tools while developing academic and personal projects.
                         </p>
+
                         <p>
                             I am currently looking for entry-level AI Engineer, Python,
                             software engineering and internship opportunities where I can
@@ -161,28 +308,35 @@
                         </p>
 
                         <div class="about-facts">
+
                             <div>
                                 <span>01</span>
                                 <strong>AI/ML Graduate</strong>
                                 <small>2026</small>
                             </div>
+
                             <div>
                                 <span>02</span>
                                 <strong>Python Developer Intern</strong>
                                 <small>Feb – May 2026</small>
                             </div>
+
                             <div>
                                 <span>03</span>
                                 <strong>Open to Opportunities</strong>
                                 <small>Remote · Hybrid · On-site</small>
                             </div>
+
                         </div>
                     </div>
 
                     <div class="about-panel reveal">
                         <div class="panel-label">CURRENT FOCUS</div>
+
                         <h3>AI Engineer</h3>
+
                         <p>Python · ML · GenAI · APIs</p>
+
                         <div class="focus-list">
                             <span>Building APIs</span>
                             <span>ML applications</span>
@@ -190,20 +344,30 @@
                             <span>Automation</span>
                         </div>
                     </div>
+
                 </div>
             </div>
         </section>
 
-        <!-- SKILLS -->
+        <!-- SKILLS SECTION -->
         <section class="section section-alt" id="skills">
             <div class="container">
+
                 <div class="section-heading reveal">
                     <p class="eyebrow">SKILLS</p>
-                    <h2>Tools I use to <span class="gradient-text">build.</span></h2>
-                    <p>Focused on practical technologies for AI, backend development and APIs.</p>
+
+                    <h2>
+                        Tools I use to
+                        <span class="gradient-text">build.</span>
+                    </h2>
+
+                    <p>
+                        Focused on practical technologies for AI, backend development and APIs.
+                    </p>
                 </div>
 
                 <div class="skill-grid">
+
                     <article class="skill-card reveal">
                         <div class="skill-icon">⌘</div>
                         <h3>Python</h3>
@@ -245,6 +409,7 @@
                         <p>Version control, repositories, project collaboration and deployment workflows.</p>
                         <span class="skill-level">Intermediate</span>
                     </article>
+
                 </div>
 
                 <div class="tool-cloud reveal">
@@ -259,20 +424,34 @@
                     <span>React</span>
                     <span>Docker Basics</span>
                 </div>
+
             </div>
         </section>
 
-        <!-- PROJECTS -->
+        <!-- PROJECTS SECTION -->
         <section class="section" id="projects">
             <div class="container">
+
                 <div class="section-heading projects-heading reveal">
+
                     <div>
                         <p class="eyebrow">SELECTED WORK</p>
-                        <h2>Projects that show what I <span class="gradient-text">build.</span></h2>
+
+                        <h2>
+                            Projects that show what I
+                            <span class="gradient-text">build.</span>
+                        </h2>
                     </div>
-                    <a class="text-link" href="https://github.com/ankitabaddoli4" target="_blank" rel="noopener noreferrer">
+
+                    <a
+                        class="text-link"
+                        href="https://github.com/ankitabaddoli4"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
                         View GitHub ↗
                     </a>
+
                 </div>
 
                 <div class="projects-grid">
@@ -282,18 +461,22 @@
                             <span class="project-number">01</span>
                             <span class="project-type">AI / EMBEDDED</span>
                         </div>
+
                         <h3>Accident Prediction & Portable Airbag</h3>
+
                         <p>
                             AI-enabled two-wheeler safety system designed to detect crash
                             patterns and support portable airbag deployment using sensor data,
                             TinyML/LSTM concepts and an ESP32-based setup.
                         </p>
+
                         <div class="project-tags">
                             <span>Python</span>
                             <span>ML / LSTM</span>
                             <span>ESP32</span>
                             <span>IoT</span>
                         </div>
+
                         <div class="project-footer">
                             <span>KSCST Selected Project</span>
                         </div>
@@ -304,19 +487,28 @@
                             <span class="project-number">02</span>
                             <span class="project-type">AI / WEB</span>
                         </div>
+
                         <h3>AI System Monitoring Dashboard</h3>
+
                         <p>
                             Flask-based monitoring dashboard that tracks system activity,
                             applies ML-based CPU usage prediction and provides real-time
                             monitoring and alerts.
                         </p>
+
                         <div class="project-tags">
                             <span>Flask</span>
                             <span>Python</span>
                             <span>ML</span>
                             <span>psutil</span>
                         </div>
-                        <a class="project-link" href="https://github.com/ankitabaddoli4/-AI-System-Monitoring-Dashboard" target="_blank" rel="noopener noreferrer">
+
+                        <a
+                            class="project-link"
+                            href="https://github.com/ankitabaddoli4/-AI-System-Monitoring-Dashboard"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
                             View project ↗
                         </a>
                     </article>
@@ -326,18 +518,29 @@
                             <span class="project-number">03</span>
                             <span class="project-type">BACKEND</span>
                         </div>
+
                         <h3>Task Management REST API</h3>
+
                         <p>
                             Backend API with CRUD operations, JWT authentication,
                             database integration and API testing using Postman.
                         </p>
+
                         <div class="project-tags">
                             <span>Flask</span>
                             <span>REST API</span>
                             <span>JWT</span>
                             <span>SQL</span>
                         </div>
-                        <span class="project-link muted-link">Backend Project</span>
+
+                        <a
+                            class="project-link"
+                            href="https://github.com/ankitabaddoli4/Week9-TASK-MANAGEMENT-REST-API"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            View project ↗
+                        </a>
                     </article>
 
                     <article class="project-card reveal">
@@ -345,45 +548,97 @@
                             <span class="project-number">04</span>
                             <span class="project-type">FULL STACK</span>
                         </div>
+
                         <h3>Full-Stack Task Management App</h3>
+
                         <p>
                             Task management application combining a FastAPI backend with
                             a React frontend, JWT authentication and CRUD workflows.
                         </p>
+
                         <div class="project-tags">
                             <span>FastAPI</span>
                             <span>React</span>
                             <span>JWT</span>
                             <span>Axios</span>
                         </div>
-                        <span class="project-link muted-link">Full-Stack Project</span>
+
+                        <a
+                            class="project-link"
+                            href="https://github.com/ankitabaddoli4/Full-Stack-Task-Management-App-FastAPI-React-"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            View project ↗
+                        </a>
+                    </article>
+
+                    <article class="project-card reveal">
+                        <div class="project-top">
+                            <span class="project-number">05</span>
+                            <span class="project-type">GENERATIVE AI</span>
+                        </div>
+
+                        <h3>CareerNexus AI</h3>
+
+                        <p>
+                            Resume and job-description assistant that estimates recognized
+                            skill coverage and helps users review keyword alignment.
+                        </p>
+
+                        <div class="project-tags">
+                            <span>Python</span>
+                            <span>Streamlit</span>
+                            <span>RAG</span>
+                            <span>GenAI</span>
+                        </div>
+
+                        <a
+                            class="project-link"
+                            href="https://github.com/ankitabaddoli4/CareerNexus-AI"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            View project ↗
+                        </a>
                     </article>
 
                 </div>
             </div>
         </section>
 
-        <!-- EXPERIENCE -->
+        <!-- EXPERIENCE SECTION -->
         <section class="section section-alt" id="experience">
             <div class="container">
+
                 <div class="section-heading reveal">
                     <p class="eyebrow">EXPERIENCE</p>
-                    <h2>Where I have <span class="gradient-text">learned by doing.</span></h2>
+
+                    <h2>
+                        Where I have
+                        <span class="gradient-text">learned by doing.</span>
+                    </h2>
                 </div>
 
                 <div class="timeline reveal">
+
                     <div class="timeline-item">
                         <div class="timeline-dot"></div>
+
                         <div class="timeline-date">FEB 2026 — MAY 2026</div>
+
                         <div class="timeline-content">
                             <p class="role-label">PYTHON DEVELOPER INTERN</p>
+
                             <h3>The Developers Arena</h3>
+
                             <p>
                                 Remote internship focused on Python development and practical
                                 programming work. Built and worked with backend concepts,
                                 APIs, databases and debugging workflows while completing
                                 assigned development tasks.
                             </p>
+
                             <div class="timeline-tags">
                                 <span>Python</span>
                                 <span>Backend</span>
@@ -392,33 +647,53 @@
                             </div>
                         </div>
                     </div>
+
                 </div>
             </div>
         </section>
 
-        <!-- RESUME -->
+        <!-- RESUME SECTION -->
         <section class="resume-section">
             <div class="container">
+
                 <div class="resume-card reveal">
+
                     <div>
                         <p class="eyebrow">RESUME</p>
+
                         <h2>Let's build something useful with AI.</h2>
-                        <p>View my resume for my education, skills, internship and projects.</p>
+
+                        <p>
+                            View my resume for my education, skills, internship and projects.
+                        </p>
                     </div>
-                    <a class="btn btn-light" href="Ankita_Baddoli_Resume.pdf" download>
+
+                    <a
+                        class="btn btn-light"
+                        href="Ankita_Baddoli_Resume.pdf"
+                        download
+                    >
                         Download Resume <span>↓</span>
                     </a>
+
                 </div>
             </div>
         </section>
 
-        <!-- CONTACT -->
+        <!-- CONTACT SECTION -->
         <section class="section contact-section" id="contact">
             <div class="container">
+
                 <div class="contact-grid">
+
                     <div class="contact-copy reveal">
                         <p class="eyebrow">GET IN TOUCH</p>
-                        <h2>Have an opportunity?<br><span class="gradient-text">Let's connect.</span></h2>
+
+                        <h2>
+                            Have an opportunity?<br>
+                            <span class="gradient-text">Let's connect.</span>
+                        </h2>
+
                         <p>
                             I am open to entry-level AI Engineer, Python, software engineering
                             and internship opportunities.
@@ -426,32 +701,53 @@
                     </div>
 
                     <div class="contact-links reveal">
-                        <a href="mailto:ankitabaddoli4@gmail.com" class="contact-card">
+
+                        <a
+                            href="mailto:ankitabaddoli4@gmail.com"
+                            class="contact-card"
+                        >
                             <span class="contact-icon">@</span>
+
                             <div>
                                 <small>Email</small>
                                 <strong>ankitabaddoli4@gmail.com</strong>
                             </div>
+
                             <span>↗</span>
                         </a>
 
-                        <a href="https://www.linkedin.com/in/ankita-baddoli-62816027a/" target="_blank" rel="noopener noreferrer" class="contact-card">
+                        <a
+                            href="https://www.linkedin.com/in/ankita-baddoli-62816027a/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="contact-card"
+                        >
                             <span class="contact-icon">in</span>
+
                             <div>
                                 <small>LinkedIn</small>
                                 <strong>ankita-baddoli-62816027a</strong>
                             </div>
+
                             <span>↗</span>
                         </a>
 
-                        <a href="https://github.com/ankitabaddoli4" target="_blank" rel="noopener noreferrer" class="contact-card">
+                        <a
+                            href="https://github.com/ankitabaddoli4"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="contact-card"
+                        >
                             <span class="contact-icon">GH</span>
+
                             <div>
                                 <small>GitHub</small>
                                 <strong>github.com/ankitabaddoli4</strong>
                             </div>
+
                             <span>↗</span>
                         </a>
+
                     </div>
                 </div>
             </div>
@@ -459,6 +755,7 @@
 
     </main>
 
+    <!-- FOOTER -->
     <footer class="footer">
         <div class="container footer-inner">
             <span>© <span id="year"></span> Ankita Baddoli</span>
@@ -467,8 +764,55 @@
         </div>
     </footer>
 
-    <button class="scroll-top" id="scrollTop" aria-label="Back to top">↑</button>
+    <button class="scroll-top" id="scrollTop" aria-label="Back to top">
+        ↑
+    </button>
 
     <script src="script.js"></script>
+
+    <!-- Fallback for the footer year and mobile navigation -->
+    <script>
+        const yearElement = document.getElementById("year");
+
+        if (yearElement) {
+            yearElement.textContent = new Date().getFullYear();
+        }
+
+        const menuButton = document.getElementById("menuBtn");
+        const navigation = document.getElementById("nav");
+
+        if (menuButton && navigation) {
+            menuButton.addEventListener("click", function () {
+                const isOpen = navigation.classList.toggle("open");
+                menuButton.setAttribute("aria-expanded", String(isOpen));
+            });
+
+            navigation.querySelectorAll("a").forEach(function (link) {
+                link.addEventListener("click", function () {
+                    navigation.classList.remove("open");
+                    menuButton.setAttribute("aria-expanded", "false");
+                });
+            });
+        }
+
+        const scrollTopButton = document.getElementById("scrollTop");
+
+        if (scrollTopButton) {
+            scrollTopButton.addEventListener("click", function () {
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
+            });
+
+            window.addEventListener("scroll", function () {
+                scrollTopButton.classList.toggle(
+                    "visible",
+                    window.scrollY > 350
+                );
+            });
+        }
+    </script>
+
 </body>
 </html>
